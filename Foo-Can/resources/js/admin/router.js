@@ -26,7 +26,7 @@ const router = new Router({
         {
             name: 'cardamount',
             path: '/cardamount',
-            component: require('./cardamount/CardAmount'),
+            component: require('./cardamount/cardamount'),
         },
         //CardType
         {

@@ -58572,7 +58572,7 @@ var content = __webpack_require__(193);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(194)("263d07cb", content, false, {});
+var update = __webpack_require__(194)("74a5d0dc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -60601,7 +60601,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/admin/cardamount/CardAmount.vue"
+Component.options.__file = "resources/js/admin/cardamount/cardamount.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -60610,9 +60610,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-229b0f61", Component.options)
+    hotAPI.createRecord("data-v-30fb31be", Component.options)
   } else {
-    hotAPI.reload("data-v-229b0f61", Component.options)
+    hotAPI.reload("data-v-30fb31be", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -60638,6 +60638,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -60645,6 +60703,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var self = this;
 
         self.$store.commit('setBreadcrumbs', [{ label: 'Card Amount', name: '' }]);
+    },
+
+    computed: {
+        binding: function binding() {
+            var binding = {};
+
+            if (this.$vuetify.breakpoint.mdAndUp) binding.column = true;
+
+            return binding;
+        }
     }
 });
 
@@ -60656,34 +60724,317 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page_wrap_vue pa-3" }, [
-      _c("h2", [_vm._v("HOME PAGE")]),
+  return _c(
+    "v-tabs",
+    [
+      _c("v-tabs-slider", { staticClass: "yellow" }),
       _vm._v(" "),
-      _c("p", [
-        _vm._v("I am located at "),
-        _c("b", [_vm._v("resources/js/admin/dashboard/Home.vue")])
+      _c("v-tab", { attrs: { href: "#tab-1" } }, [
+        _vm._v("\r\n    Cash In\r\n  ")
       ]),
       _vm._v(" "),
-      _c("p", [
-        _vm._v("single page routes for admin can be found at "),
-        _c("b", [_vm._v("resources/js/admin/router.js")])
-      ])
-    ])
-  }
-]
+      _c("v-tab", { attrs: { href: "#tab-2" } }, [
+        _vm._v("\r\n    Cash Out\r\n  ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-tab-item",
+        { attrs: { id: "tab-1", center: "" } },
+        [
+          _c(
+            "v-card",
+            { attrs: { width: "40%", center: "" } },
+            [
+              _c(
+                "v-card-title",
+                [
+                  _c("v-icon", [_vm._v("payment")]),
+                  _vm._v(" Cash In\r\n            ")
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-form",
+                {
+                  ref: "userFormAdd",
+                  attrs: { "lazy-validation": "" },
+                  model: {
+                    value: _vm.valid,
+                    callback: function($$v) {
+                      _vm.valid = $$v
+                    },
+                    expression: "valid"
+                  }
+                },
+                [
+                  _c(
+                    "v-container",
+                    { attrs: { "grid-list-xl": "", "text-xs-center": "" } },
+                    [
+                      _c(
+                        "v-layout",
+                        _vm._b({}, "v-layout", _vm.binding, false),
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Card ID or Name",
+                                  rules: _vm.nameRules
+                                },
+                                model: {
+                                  value: _vm.name,
+                                  callback: function($$v) {
+                                    _vm.name = $$v
+                                  },
+                                  expression: "name"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Current Amount",
+                                  rules: _vm.emailRules
+                                },
+                                model: {
+                                  value: _vm.email,
+                                  callback: function($$v) {
+                                    _vm.email = $$v
+                                  },
+                                  expression: "email"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Add Amount",
+                                  type: "password",
+                                  rules: _vm.passwordRules
+                                },
+                                model: {
+                                  value: _vm.password,
+                                  callback: function($$v) {
+                                    _vm.password = $$v
+                                  },
+                                  expression: "password"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: {
+                                    disabled: !_vm.valid,
+                                    color: "primary",
+                                    dark: ""
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.save()
+                                    }
+                                  }
+                                },
+                                [_vm._v("Add")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-tab-item",
+        { attrs: { id: "tab-2", center: "" } },
+        [
+          _c(
+            "v-card",
+            { attrs: { width: "40%", center: "" } },
+            [
+              _c(
+                "v-card-title",
+                [
+                  _c("v-icon", [_vm._v("payment")]),
+                  _vm._v(" Cash Out\r\n            ")
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-form",
+                {
+                  ref: "userFormAdd",
+                  attrs: { "lazy-validation": "" },
+                  model: {
+                    value: _vm.valid,
+                    callback: function($$v) {
+                      _vm.valid = $$v
+                    },
+                    expression: "valid"
+                  }
+                },
+                [
+                  _c(
+                    "v-container",
+                    { attrs: { "grid-list-xl": "" } },
+                    [
+                      _c(
+                        "v-layout",
+                        _vm._b({}, "v-layout", _vm.binding, false),
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Card ID or Name",
+                                  rules: _vm.nameRules
+                                },
+                                model: {
+                                  value: _vm.name,
+                                  callback: function($$v) {
+                                    _vm.name = $$v
+                                  },
+                                  expression: "name"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Current Amount",
+                                  rules: _vm.emailRules
+                                },
+                                model: {
+                                  value: _vm.email,
+                                  callback: function($$v) {
+                                    _vm.email = $$v
+                                  },
+                                  expression: "email"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Add Amount",
+                                  type: "password",
+                                  rules: _vm.passwordRules
+                                },
+                                model: {
+                                  value: _vm.password,
+                                  callback: function($$v) {
+                                    _vm.password = $$v
+                                  },
+                                  expression: "password"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: {
+                                    disabled: !_vm.valid,
+                                    color: "primary",
+                                    dark: ""
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.save()
+                                    }
+                                  }
+                                },
+                                [_vm._v("Refund")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-229b0f61", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-30fb31be", module.exports)
   }
 }
 
@@ -66766,51 +67117,51 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var AxiosAjaxDetect = function () {
-    function AxiosAjaxDetect() {
-        _classCallCheck(this, AxiosAjaxDetect);
-    }
+            function AxiosAjaxDetect() {
+                        _classCallCheck(this, AxiosAjaxDetect);
+            }
 
-    _createClass(AxiosAjaxDetect, [{
-        key: "init",
-        value: function init(startCb, endCb) {
+            _createClass(AxiosAjaxDetect, [{
+                        key: "init",
+                        value: function init(startCb, endCb) {
 
-            var count = 0;
+                                    var count = 0;
 
-            // Add a request interceptor
-            window.axios.interceptors.request.use(function (config) {
-                count++;
+                                    // Add a request interceptor
+                                    window.axios.interceptors.request.use(function (config) {
+                                                count++;
 
-                if (count === 1) startCb();
+                                                if (count === 1) startCb();
 
-                return config;
-            }, function (error) {
-                return Promise.reject(error);
-            });
+                                                return config;
+                                    }, function (error) {
+                                                return Promise.reject(error);
+                                    });
 
-            // Add a response interceptor
-            window.axios.interceptors.response.use(function (response) {
+                                    // Add a response interceptor
+                                    window.axios.interceptors.response.use(function (response) {
 
-                count--;
+                                                count--;
 
-                if (count === 0) {
-                    endCb();
-                }
+                                                if (count === 0) {
+                                                            endCb();
+                                                }
 
-                return response;
-            }, function (error) {
+                                                return response;
+                                    }, function (error) {
 
-                count--;
+                                                count--;
 
-                if (count === 0) {
-                    endCb();
-                }
+                                                if (count === 0) {
+                                                            endCb();
+                                                }
 
-                return Promise.reject(error);
-            });
-        }
-    }]);
+                                                return Promise.reject(error);
+                                    });
+                        }
+            }]);
 
-    return AxiosAjaxDetect;
+            return AxiosAjaxDetect;
 }();
 
 /* harmony default export */ __webpack_exports__["a"] = (new AxiosAjaxDetect());
