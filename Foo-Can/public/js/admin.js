@@ -60696,23 +60696,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            id: '12345678'
+        };
+    },
     mounted: function mounted() {
 
         var self = this;
 
         self.$store.commit('setBreadcrumbs', [{ label: 'Card Amount', name: '' }]);
-    },
-
-    computed: {
-        binding: function binding() {
-            var binding = {};
-
-            if (this.$vuetify.breakpoint.mdAndUp) binding.column = true;
-
-            return binding;
-        }
     }
 });
 
@@ -60743,13 +60740,12 @@ var render = function() {
         [
           _c(
             "v-card",
-            { attrs: { width: "40%", center: "" } },
             [
               _c(
                 "v-card-title",
                 [
                   _c("v-icon", [_vm._v("payment")]),
-                  _vm._v(" Cash In\r\n            ")
+                  _vm._v(" Cash In\r\n        ")
                 ],
                 1
               ),
@@ -60772,95 +60768,73 @@ var render = function() {
                 [
                   _c(
                     "v-container",
-                    { attrs: { "grid-list-xl": "", "text-xs-center": "" } },
+                    { attrs: { "grid-list-md": "" } },
                     [
                       _c(
                         "v-layout",
-                        _vm._b({}, "v-layout", _vm.binding, false),
+                        { attrs: { row: "", wrap: "" } },
                         [
                           _c(
-                            "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Card ID or Name",
-                                  rules: _vm.nameRules
-                                },
-                                model: {
-                                  value: _vm.name,
-                                  callback: function($$v) {
-                                    _vm.name = $$v
-                                  },
-                                  expression: "name"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Current Amount",
-                                  rules: _vm.emailRules
-                                },
-                                model: {
-                                  value: _vm.email,
-                                  callback: function($$v) {
-                                    _vm.email = $$v
-                                  },
-                                  expression: "email"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Add Amount",
-                                  type: "password",
-                                  rules: _vm.passwordRules
-                                },
-                                model: {
-                                  value: _vm.password,
-                                  callback: function($$v) {
-                                    _vm.password = $$v
-                                  },
-                                  expression: "password"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            "v-row",
                             [
                               _c(
-                                "v-btn",
-                                {
-                                  attrs: {
-                                    disabled: !_vm.valid,
-                                    color: "primary",
-                                    dark: ""
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.save()
+                                "v-flex",
+                                { attrs: { xs12: "", sm12: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      label: "Card ID or Name",
+                                      value: _vm.id
                                     }
-                                  }
-                                },
-                                [_vm._v("Add")]
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: { label: "Current Amount" }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm6: "" } },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: { label: "Add Amount" }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm12: "" } },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: {
+                                        disabled: !_vm.valid,
+                                        color: "primary",
+                                        dark: ""
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.save()
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Add")]
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
@@ -60887,7 +60861,6 @@ var render = function() {
         [
           _c(
             "v-card",
-            { attrs: { width: "40%", center: "" } },
             [
               _c(
                 "v-card-title",
@@ -60916,15 +60889,15 @@ var render = function() {
                 [
                   _c(
                     "v-container",
-                    { attrs: { "grid-list-xl": "" } },
+                    { attrs: { "grid-list-md": "" } },
                     [
                       _c(
                         "v-layout",
-                        _vm._b({}, "v-layout", _vm.binding, false),
+                        { attrs: { row: "", wrap: "" } },
                         [
                           _c(
                             "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            { attrs: { xs12: "", sm12: "" } },
                             [
                               _c("v-text-field", {
                                 attrs: {
@@ -60945,7 +60918,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            { attrs: { xs12: "", sm6: "" } },
                             [
                               _c("v-text-field", {
                                 attrs: {
@@ -60966,7 +60939,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            { attrs: { xs12: "", sm6: "" } },
                             [
                               _c("v-text-field", {
                                 attrs: {
@@ -60988,7 +60961,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-flex",
-                            { attrs: { xs4: "", "offset-xs1": "" } },
+                            { attrs: { xs12: "", sm12: "" } },
                             [
                               _c(
                                 "v-btn",
@@ -61126,28 +61099,200 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-
-        var self = this;
-
-        self.$store.commit('setBreadcrumbs', [{ label: 'Card Type', name: '' }]);
-    },
     data: function data() {
-        var self = this;
         return {
-            email: '',
-            password: '',
-            show: ''
+            dialog: false,
+            headers: [{
+                text: 'Action',
+                value: false,
+                align: 'left',
+                sortable: false
+            }, {
+                text: 'Card Type Name',
+                value: 'name',
+                align: 'left',
+                sortable: false
+            }, {
+                text: 'Description',
+                value: 'email',
+                align: 'left',
+                sortable: false
+            }, {
+                text: 'Number of Cards',
+                value: 'cards',
+                align: 'left',
+                sortable: false
+            }],
+            items: [],
+            totalItems: 0,
+            pagination: {
+                itemsPerPage: 10
+            },
+            filters: {
+                name: '',
+                email: '',
+                groupId: [],
+                groupOptions: []
+            },
+            dialogs: {
+                showPermissions: {
+                    items: [],
+                    show: false
+                }
+            }
         };
     },
+    mounted: function mounted() {
+        var self = this;
+        self.loadGroups(function () {});
+        self.$eventBus.$on(['USER_ADDED', 'USER_UPDATED', 'USER_DELETED', 'GROUP_ADDED'], function () {
+            self.loadUsers(function () {});
+        });
+        self.$store.commit('setBreadcrumbs', [{
+            label: 'Users',
+            to: {
+                name: 'users.list'
+            }
+        }]);
+    },
 
-    methods: {
-        submit: function submit() {
+    watch: {
+        pagination: {
+            handler: function handler() {
+                this.loadUsers(function () {});
+            }
+        },
+        'filters.name': _.debounce(function () {
             var self = this;
-            self.show = self.email + ' ' + self.password;
-            alert(self.email + ' ' + self.password);
+            self.loadUsers(function () {});
+        }, 700),
+        'filters.email': _.debounce(function () {
+            var self = this;
+            self.loadUsers(function () {});
+        }, 700),
+        'filters.groupId': _.debounce(function () {
+            var self = this;
+            self.loadUsers(function () {});
+        }, 700)
+    },
+    methods: {
+        trash: function trash(user) {
+            var self = this;
+            self.$store.commit('showDialog', {
+                type: "confirm",
+                icon: 'warning',
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete this user?",
+                okCb: function okCb() {
+                    axios.delete('/admin/users/' + user.id).then(function (response) {
+                        self.$store.commit('showSnackbar', {
+                            message: response.data.message,
+                            color: 'success',
+                            duration: 3000
+                        });
+                        self.$eventBus.$emit('USER_DELETED');
+                    }).catch(function (error) {
+                        self.$store.commit('hideLoader');
+                        if (error.response) {
+                            self.$store.commit('showSnackbar', {
+                                message: error.response.data.message,
+                                color: 'error',
+                                duration: 3000
+                            });
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                    });
+                },
+                cancelCb: function cancelCb() {
+                    console.log("CANCEL");
+                }
+            });
+        },
+        showDialog: function showDialog(dialog, data) {
+            var self = this;
+            switch (dialog) {
+                case 'user_permissions':
+                    self.dialogs.showPermissions.items = data;
+                    setTimeout(function () {
+                        self.dialogs.showPermissions.show = true;
+                    }, 500);
+                    break;
+            }
+        },
+        loadUsers: function loadUsers(cb) {
+            var self = this;
+            var params = {
+                name: self.filters.name,
+                email: self.filters.email,
+                group_id: self.filters.groupId.join(","),
+                page: self.pagination.page,
+                per_page: self.pagination.itemsPerPage
+            };
+            axios.get('/admin/users', {
+                params: params
+            }).then(function (response) {
+                self.items = response.data.data.data;
+                self.totalItems = response.data.data.total;
+                self.pagination.totalItems = response.data.data.total;
+                (cb || Function)();
+            });
+        },
+        loadGroups: function loadGroups(cb) {
+            var self = this;
+            var params = {
+                paginate: 'no'
+            };
+            axios.get('/admin/groups', {
+                params: params
+            }).then(function (response) {
+                self.filters.groupOptions = response.data.data;
+                cb();
+            });
         }
     }
 });
@@ -61160,123 +61305,289 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "page_wrap_vue pa-3" }, [
-    _c("h2", [_vm._v("Horizontal form")]),
-    _vm._v(" "),
-    _c(
-      "form",
-      { staticClass: "form-horizontal", attrs: { action: "/action_page.php" } },
-      [
-        _c("div", { staticClass: "form-group" }, [
+  return _c(
+    "div",
+    { staticClass: "component-wrap" },
+    [
+      _c("v-card", { staticClass: "pt-3" }, [
+        _c("div", { staticClass: "d-flex flex-row" }, [
           _c(
-            "label",
-            { staticClass: "control-label col-sm-2", attrs: { for: "email" } },
-            [_vm._v("Email:")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("input", {
-              directives: [
+            "div",
+            { staticClass: "flex-grow-1 pa-2" },
+            [
+              _c(
+                "v-btn",
                 {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.email,
-                  expression: "email"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "email",
-                id: "email",
-                placeholder: "Enter email",
-                name: "email"
-              },
-              domProps: { value: _vm.email },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+                  staticClass: "primary lighten-1",
+                  attrs: { dark: "" },
+                  on: {
+                    click: function($event) {
+                      $event.stopPropagation()
+                      _vm.dialog = true
+                    }
                   }
-                  _vm.email = $event.target.value
-                }
-              }
-            })
-          ])
+                },
+                [
+                  _vm._v(
+                    "\r\n                    New Card Type\r\n                    "
+                  ),
+                  _c("v-icon", { attrs: { right: "", dark: "" } }, [
+                    _vm._v("add")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-dialog",
+                {
+                  attrs: { "max-width": "500" },
+                  model: {
+                    value: _vm.dialog,
+                    callback: function($$v) {
+                      _vm.dialog = $$v
+                    },
+                    expression: "dialog"
+                  }
+                },
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-title", { staticClass: "headline" }, [
+                        _vm._v("Add New Card Type")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _c(
+                            "v-form",
+                            { staticClass: "px-3" },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  label: "Card Type",
+                                  "prepend-icon": "folder"
+                                },
+                                model: {
+                                  value: _vm.title,
+                                  callback: function($$v) {
+                                    _vm.title = $$v
+                                  },
+                                  expression: "title"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("v-textarea", {
+                                attrs: {
+                                  label: "Description",
+                                  "prepend-icon": "edit"
+                                },
+                                model: {
+                                  value: _vm.content,
+                                  callback: function($$v) {
+                                    _vm.content = $$v
+                                  },
+                                  expression: "content"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "green darken-1", text: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.dialog = false
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                                Add\r\n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "green darken-1", text: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.dialog = false
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                                Cancel\r\n                            "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
+        _c("div", { staticClass: "d-flex flex-lg-row flex-sm-column" }, [
           _c(
-            "label",
-            { staticClass: "control-label col-sm-2", attrs: { for: "pwd" } },
-            [_vm._v("Password:")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.password,
-                  expression: "password"
+            "div",
+            { staticClass: "flex-grow-1 pa-2" },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  filled: "",
+                  "prepend-icon": "search",
+                  label: "Filter By Name"
+                },
+                model: {
+                  value: _vm.filters.name,
+                  callback: function($$v) {
+                    _vm.$set(_vm.filters, "name", $$v)
+                  },
+                  expression: "filters.name"
                 }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "password",
-                id: "pwd",
-                placeholder: "Enter password",
-                name: "pwd"
-              },
-              domProps: { value: _vm.password },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.password = $event.target.value
-                }
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("div", { staticClass: "col-sm-offset-2 col-sm-10" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-outline-primary",
-                attrs: { type: "submit" },
-                on: { click: _vm.submit }
-              },
-              [_vm._v("Submit")]
-            )
-          ])
+              })
+            ],
+            1
+          )
         ])
-      ]
-    )
-  ])
+      ]),
+      _vm._v(" "),
+      _c("v-divider", { staticClass: "pb-2" }),
+      _vm._v(" "),
+      _c("v-data-table", {
+        staticClass: "elevation-1",
+        attrs: {
+          "hide-default-header": "",
+          headers: _vm.headers,
+          options: _vm.pagination,
+          items: _vm.items,
+          "server-items-length": _vm.totalItems
+        },
+        on: {
+          "update:options": function($event) {
+            _vm.pagination = $event
+          }
+        },
+        scopedSlots: _vm._u([
+          {
+            key: "header",
+            fn: function(ref) {
+              var headers = ref.props.headers
+              return [
+                _c("thead", [
+                  _c(
+                    "tr",
+                    _vm._l(headers, function(header) {
+                      return _c("th", [
+                        header.value == "name"
+                          ? _c(
+                              "div",
+                              { class: "text-" + header.align },
+                              [
+                                _c("v-icon", [_vm._v("mdi-person")]),
+                                _vm._v(
+                                  " " +
+                                    _vm._s(header.text) +
+                                    "\r\n                        "
+                                )
+                              ],
+                              1
+                            )
+                          : header.value == "email"
+                          ? _c(
+                              "div",
+                              { class: "text-" + header.align },
+                              [
+                                _c("v-icon", [_vm._v("mdi-email")]),
+                                _vm._v(
+                                  " " +
+                                    _vm._s(header.text) +
+                                    "\r\n                        "
+                                )
+                              ],
+                              1
+                            )
+                          : header.value == "cards"
+                          ? _c(
+                              "div",
+                              { class: "text-" + header.align },
+                              [
+                                _c("v-icon", [_vm._v("mdi-email")]),
+                                _vm._v(
+                                  " " +
+                                    _vm._s(header.text) +
+                                    "\r\n                        "
+                                )
+                              ],
+                              1
+                            )
+                          : _c("div", { class: "text-" + header.align }, [
+                              _vm._v(_vm._s(header.text))
+                            ])
+                      ])
+                    }),
+                    0
+                  )
+                ])
+              ]
+            }
+          },
+          {
+            key: "body",
+            fn: function(ref) {
+              var items = ref.items
+              return [
+                _c(
+                  "tbody",
+                  _vm._l(items, function(item) {
+                    return _c("tr", { key: item.id }, [
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td")
+                    ])
+                  }),
+                  0
+                )
+              ]
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c("v-divider", { staticClass: "py-5" })
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "col-sm-offset-2 col-sm-10" }, [
-        _c("div", { staticClass: "checkbox" }, [
-          _c("label", [
-            _c("input", { attrs: { type: "checkbox", name: "remember" } }),
-            _vm._v(" Remember me")
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
