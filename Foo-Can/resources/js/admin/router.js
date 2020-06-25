@@ -47,8 +47,20 @@ const router = new Router({
                     name:'cardtype.create',
                     component: require('./cardtype/Components/CardTypeAdd')
                 },
+                {
+                    path:'edit',
+                    name:'cardtype.edit',
+                    component: require('./cardtype/Components/CardTypeEdit')
+                },
             ]
         },
+
+        // //
+        // {
+        //     name: 'sample',
+        //     path: '/sample',
+        //     component: require('./cardtype/Components/sample'),
+        // },
         //Shop
         {
             name: 'shop',

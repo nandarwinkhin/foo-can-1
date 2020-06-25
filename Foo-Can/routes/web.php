@@ -1,5 +1,6 @@
 <?php
 
+use App\Components\CardType\Models\CardType;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,4 +36,11 @@ Route::prefix('admin')->namespace('Admin')->middleware(['auth','demo'])->group(f
     Route::resource('file-groups','FileGroupController');
     Route::resource('cardamount','CardAmountController');
     Route::resource('cardtype','CardTypeController');
+    //Route::get('cardtype','CardTypeController@index');
+    
 });
+// Route::get('/sample',function(){
+//     $data  = CardType::all();
+//     echo $data;
+//    // echo '<script>alert("hello sample");</script>';
+//         });

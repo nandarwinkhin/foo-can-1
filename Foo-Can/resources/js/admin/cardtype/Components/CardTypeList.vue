@@ -62,17 +62,17 @@
             </template>
             <template v-slot:body="{items}">
                 <tbody>
-                    <tr v-for="item in items" :key="item.id">
-                        <!-- <td>
+                    <tr v-for="item in items" :key="item.cardType_id">
+                        <td>
                             <div class="ml-n1 my-1 d-flex justify-space-between align-content-space-around flex-wrap">
-                                <v-btn @click="$router.push({name:'cardtype.edit',params:{id: item.id}})" class="ma-1" small outlined icon color="info">
+                                <v-btn @click="$router.push({name:'cardtype.edit',params:{cardType_id: item.cardType_id}})" class="ma-1" small outlined icon color="info">
                                     <v-icon small>mdi-pencil</v-icon>
                                 </v-btn>
                                 <v-btn @click="trash(item)" class="ma-1" small outlined icon color="red">
                                     <v-icon small>mdi-delete</v-icon>
                                 </v-btn>
                             </div>
-                        </td> -->
+                        </td>
                         <td>{{ item.cardTypeName }}</td>
                         <td>{{ item.cardTypeDescription }}</td>
                         <!-- <td>
@@ -164,7 +164,7 @@
 
             // self.loadGroups(()=>{});
 
-            self.$eventBus.$on(['CARDTYPE_ADDED'],()=>{
+            self.$eventBus.$on(['CARDTYPE_ADDED','CARDTYPE_DELETED','CARDTYPE_UPDATED'],()=>{
                 self.loadcardtypes(()=>{});
             });
 
@@ -199,17 +199,17 @@
             //         _this.items = response.data;
             //     });
             // },
-            trash(user) {
+            trash(cardtype) {
                 const self = this;
 
                 self.$store.commit('showDialog',{
                     type: "confirm",
                     icon: 'warning',
                     title: "Confirm Deletion",
-                    message: "Are you sure you want to delete this user?",
+                    message: "Are you sure you want to delete this card type?",
                     okCb: ()=>{
 
-                        axios.delete('/admin/users/' + user.id).then(function(response) {
+                        axios.delete('/admin/cardtype/' + cardtype.cardType_id).then(function(response) {
 
                             self.$store.commit('showSnackbar',{
                                 message: response.data.message,
@@ -217,7 +217,7 @@
                                 duration: 3000
                             });
 
-                            self.$eventBus.$emit('USER_DELETED');
+                            self.$eventBus.$emit('CARDTYPE_DELETED');
 
                         }).catch(function (error) {
 
@@ -266,8 +266,8 @@
                     // per_page: self.pagination.itemsPerPage
                 };
 
-                axios.get('/admin/cardtype',{params: params}).then(function(response) {
-                    self.items = response.data;
+                axios.get('./admin/cardtype',{params: params}).then(function(response) {
+                    self.items = response.data.data;
                     self.totalItems = response.data.data.total;
                     self.pagination.totalItems = response.data.data.total;
                     (cb || Function)();

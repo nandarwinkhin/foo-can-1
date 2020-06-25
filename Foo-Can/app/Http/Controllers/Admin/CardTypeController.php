@@ -31,14 +31,16 @@ class CardTypeController extends AdminController
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data = $this->CardTypeRepository->index(request()->all());
+    {   
+        //$data = $this->CardTypeRepository->index(request()->all());
+        $data  = CardType::all();
+
         // $data  = CardType::all()->get()->first();
         // echo $data;
         // $res ponse["data"] = $data();
         // return response()->json($data);
         
-        return $this->sendResponseOk($data,"ok");
+        return $this->sendResponseOk($data);
     }
 
     // /**
@@ -88,13 +90,18 @@ class CardTypeController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $cardtype = $this->CardTypeRepository->find($id);
+    public function show($cardType_id)
+    {   
+        $cardtype=CardType::where('cardType_id',$cardType_id)->get()->first();
+        // $cardtype = $this->CardTypeRepository->find($id);
+        // echo "Card Type";
+        // echo $cardtype;
 
-        if(!$cardtype) return $this->sendResponseNotFound();
-
-        return $this->sendResponseOk($cardtype);
+        // if(!$cardtype) return $this->sendResponseNotFound();
+        if(!$cardtype)
+            return false;
+        else
+            return $this->sendResponseOk($cardtype);
     }
 
     // /**
@@ -115,20 +122,22 @@ class CardTypeController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $cardType_id)
     {
-        $validate = validator($request->all(),[
-            'cardTypeName' => 'string',
-            'cardTypeDescription' => 'string',
-            'CreatedBy' => 'integer',
-        ]);
+        // $validate = validator($request->all(),[
+        //     'cardTypeName' => 'string',
+        //     'cardTypeDescription' => 'string',
+        //     'CreatedBy' => 'integer',
+        // ]);
+        $cardtype=CardType::where('cardType_id',$cardType_id)->update($request->all());
+        // if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
 
-        if($validate->fails()) return $this->sendResponseBadRequest($validate->errors()->first());
+        // $updated = $this->CardTypeRepository->update($id,$request->all());
 
-        $updated = $this->CardTypeRepository->update($id,$request->all());
-
-        if(!$updated) return $this->sendResponseBadRequest("Failed update.");
-
+        // if(!$updated) return $this->sendResponseBadRequest("Failed update.");
+        if(!$cardtype)
+            return false;
+        else
         return $this->sendResponseUpdated();
     }
 
@@ -138,12 +147,12 @@ class CardTypeController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($cardType_id)
     {
         /** @var CardType $cardtype */
-        $cardtype = $this->CardTypeRepository->find($id);
+        // $cardtype = $this->CardTypeRepository->find($cardType_id);
 
-        if(!$cardtype) return $this->sendResponseNotFound();
+        // if(!$cardtype) return $this->sendResponseNotFound();
 
         // // prevent delete of super user permission
         // if($cardtype->key == CardType::SUPER_USER_PERMISSION_KEY)
@@ -151,8 +160,9 @@ class CardTypeController extends AdminController
         //     return $this->sendResponseBadRequest("Cannot delete permission.");
         // }
 
-        $this->CardTypeRepository->delete($id);
+        // $this->CardTypeRepository->delete($cardType_id);
 
+        CardType::where('cardType_id',$cardType_id)->delete();
         return $this->sendResponseDeleted();
     }
 }
