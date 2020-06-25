@@ -48,7 +48,7 @@
                 <v-container grid-list-md>
                 <v-layout row wrap>
                     <v-flex xs12 sm12>
-                        <v-text-field label="Card ID or Name" v-model="name" :rules="nameRules"></v-text-field>
+                        <v-text-field label="Card ID or Name" v-model="id" :rules="nameRules"></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm6>
                         <v-text-field label="Current Amount" v-model="email" :rules="emailRules"></v-text-field>

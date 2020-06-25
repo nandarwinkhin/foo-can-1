@@ -34,4 +34,5 @@ Route::prefix('admin')->namespace('Admin')->middleware(['auth','demo'])->group(f
     Route::resource('files','FileController');
     Route::resource('file-groups','FileGroupController');
     Route::resource('cardamount','CardAmountController');
+    Route::resource('cardtype','CardTypeController');
 });

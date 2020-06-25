@@ -30,9 +30,24 @@ const router = new Router({
         },
         //CardType
         {
-            name: 'cardtype',
+            // name: 'cardtype',
+            // path: '/cardtype',
+            // component: require('./cardtype/CardType'),
+
             path: '/cardtype',
             component: require('./cardtype/CardType'),
+            children: [
+                {
+                    path:'/',
+                    name:'cardtype',
+                    component: require('./cardtype/Components/CardTypeList')
+                },
+                {
+                    path:'create',
+                    name:'cardtype.create',
+                    component: require('./cardtype/Components/CardTypeAdd')
+                },
+            ]
         },
         //Shop
         {
