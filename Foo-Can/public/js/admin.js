@@ -59042,7 +59042,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]({
         }, {
             path: 'edit',
             name: 'cardtype.edit',
-            component: __webpack_require__(218)
+            component: __webpack_require__(218),
+            props: function props(route) {
+                return { cardType_id: route.params.cardType_id };
+            }
         }]
     },
 
@@ -61311,6 +61314,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -61324,6 +61328,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
 
             filters: {
+                cardType_id: '',
                 cardTypeName: '',
                 cardTypeDescription: ''
                 // groupId: [],
@@ -61701,6 +61706,8 @@ var render = function() {
                           1
                         )
                       ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.cardType_id))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.cardTypeName))]),
                       _vm._v(" "),
@@ -62146,9 +62153,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.$eventBus.$emit('CARDTYPE_UPDATED');
                 self.$store.commit('hideLoader');
 
-                //reset
-                self.$refs.cardtype.reset();
-                self.cardtypes = [];
+                // //reset
+                // self.$refs.cardtype.reset();
+                // self.cardtypes = [];
             }).catch(function (error) {
 
                 self.$store.commit('hideLoader');
@@ -62179,7 +62186,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.cardTypeName = CardType.cardTypeName;
                 self.cardTypeDescription = CardType.cardTypeDescription;
 
-                self.$store.commit('setBreadcrumbs', [{ label: 'cardtype', to: { name: 'cardtype.list' } }, { label: CardType.cardTypeName, to: '' }, { label: 'Edit', to: '' }]);
+                self.$store.commit('setBreadcrumbs', [{ label: 'Cardtypes', to: { name: 'cardtype.list' } }, { label: CardType.cardTypeName, to: '' }, { label: 'Edit', to: '' }]);
 
                 cb();
             });

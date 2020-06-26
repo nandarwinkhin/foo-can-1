@@ -72,9 +72,9 @@
                     self.$eventBus.$emit('CARDTYPE_UPDATED');
                     self.$store.commit('hideLoader');
 
-                    //reset
-                    self.$refs.cardtype.reset();
-                    self.cardtypes = [];
+                    // //reset
+                    // self.$refs.cardtype.reset();
+                    // self.cardtypes = [];
 
                 }).catch(function (error) {
 
@@ -110,7 +110,7 @@
 
 
                     self.$store.commit('setBreadcrumbs',[
-                        {label:'cardtype',to:{name:'cardtype.list'}},
+                        {label:'Cardtypes',to:{name:'cardtype.list'}},
                         {label:CardType.cardTypeName,to:''},
                         {label:'Edit',to:''},
                     ]);

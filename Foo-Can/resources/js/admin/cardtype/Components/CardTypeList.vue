@@ -73,6 +73,7 @@
                                 </v-btn>
                             </div>
                         </td>
+                         <td>{{ item.cardType_id }}</td>
                         <td>{{ item.cardTypeName }}</td>
                         <td>{{ item.cardTypeDescription }}</td>
                         <!-- <td>
@@ -145,6 +146,7 @@
                 },
 
                 filters: {
+                    cardType_id:'',
                     cardTypeName: '',
                     cardTypeDescription: '',
                     // groupId: [],

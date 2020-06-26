@@ -50,7 +50,8 @@ const router = new Router({
                 {
                     path:'edit',
                     name:'cardtype.edit',
-                    component: require('./cardtype/Components/CardTypeEdit')
+                    component: require('./cardtype/Components/CardTypeEdit'),
+                    props: (route) => ({cardType_id: route.params.cardType_id}),
                 },
             ]
         },
